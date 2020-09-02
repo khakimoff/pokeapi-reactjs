@@ -2,9 +2,9 @@
 
 React,redux,redux-thunk,redux-saga,live search, PokeAPI, Snapshot Testing
 
-Steps:
-install pokeapi_reactjs
-cd pokeapi_reactjs
-npm install 
-npm start 
+Steps:<br />
+install pokeapi_reactjs<br />
+cd pokeapi_reactjs<br />
+npm install <br />
+npm start <br />
 
