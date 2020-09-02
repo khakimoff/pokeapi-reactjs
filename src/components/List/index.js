@@ -1,13 +1,15 @@
-import React from "react";
-import { connect } from "react-redux";
-import { fetchAll } from "../../redux/actions/root";
-import preloader from "../../img/preloader.gif";
-import shortid from "shortid";
+import React from 'react';
+import { connect } from 'react-redux';
+import shortid from 'shortid';
+import { fetchAll } from '../../redux/actions/root';
+import preloader from '../../img/preloader.gif';
 
-//conmponents
-import Card from "../Card";
+// conmponents
+import Card from '../Card';
 
-function List({ fetchAll, pokemons, loading, filter }) {
+function List({
+  fetchAll, pokemons, loading, filter,
+}) {
   const filteredPokemons = pokemons.filter((pk) => pk.name.includes(filter));
 
   return (
@@ -22,11 +24,11 @@ function List({ fetchAll, pokemons, loading, filter }) {
             <p>Loading...</p>
           </div>
         ) : (
-          ""
+          ''
         )}
         <hr />
         <div>
-          {filteredPokemons.map((pokemon, i) => (
+          {filteredPokemons.map((pokemon) => (
             <Card key={shortid.generate()} pokemon={pokemon}></Card>
           ))}
         </div>

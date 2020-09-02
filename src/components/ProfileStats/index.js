@@ -1,9 +1,8 @@
-import React from "react";
-import { connect } from "react-redux";
-import shortid from "shortid";
+import React from 'react';
+import { connect } from 'react-redux';
+import shortid from 'shortid';
 
-const ProfileStats = ({ stats }) => {
-  return (
+const ProfileStats = ({ stats }) => (
     <div>
       <div className="details_item">
         <h3>Stats</h3>
@@ -17,11 +16,10 @@ const ProfileStats = ({ stats }) => {
         </ul>
       </div>
     </div>
-  );
-};
+);
 
 function getPoke(state, curPokeId) {
-  const pokemons = state.mainReducer.pokemons;
+  const { pokemons } = state.mainReducer;
   const values = Object.values(pokemons);
   for (let i = 0; i < values.length; i++) {
     if (values[i].id === curPokeId) return values[i];

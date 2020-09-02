@@ -1,16 +1,16 @@
-import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { connect } from "react-redux";
-import { fetchDescription } from "../../redux/actions/pokemon";
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { fetchDescription } from '../../redux/actions/pokemon';
 
 // import preloader from "../../img/preloader.gif";
 
-//components
-import Types from "../Card/Types";
+// components
+import Types from '../Card/Types';
 
 function ProfileInitial({ types, name, fetchDescription }) {
   const params = useParams();
-  let id = parseInt(params.pokemonId);
+  const id = parseInt(params.pokemonId);
 
   const url = `https://pokeres.bastionbot.org/images/pokemon/${id}.png`;
 
@@ -55,7 +55,7 @@ function ProfileInitial({ types, name, fetchDescription }) {
 }
 
 function getPoke(state, curPokeId) {
-  const pokemons = state.mainReducer.pokemons;
+  const { pokemons } = state.mainReducer;
   const values = Object.values(pokemons);
   for (let i = 0; i < values.length; i++) {
     if (values[i].id === curPokeId) return values[i];
@@ -67,7 +67,7 @@ const mapStateToProps = (state) => {
   const curPokeId = state.mainReducer.currentPokemon;
   const pk = getPoke(state, curPokeId);
 
-  const description = state.pokemonReducer.description;
+  const { description } = state.pokemonReducer;
   return {
     id: pk.id,
     types: pk.types,
@@ -77,7 +77,7 @@ const mapStateToProps = (state) => {
 };
 
 const PokeIntro = connect(mapStateToProps, { fetchDescription })(
-  ProfileInitial
+  ProfileInitial,
 );
 
 export default PokeIntro;

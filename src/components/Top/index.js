@@ -1,16 +1,18 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { setFilter } from "../../redux/actions/root";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { setFilter } from '../../redux/actions/root';
 
-function Top({ pokemons, setFilter, filter, page }) {
-  let placeholder = pokemons.length < 1 ? "You need onload pokemons" : "Name";
+function Top({
+  pokemons, setFilter, filter, page,
+}) {
+  const placeholder = pokemons.length < 1 ? 'You need onload pokemons' : 'Name';
 
-  let disabled = pokemons.length < 1;
+  const disabled = pokemons.length < 1;
 
   return (
     <div>
-      {page !== "pokemon" ? (
+      {page !== 'pokemon' ? (
         <div className="list_top">
           <h1>Pokemon search</h1>
           <input
