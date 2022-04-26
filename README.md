@@ -1,10 +1,15 @@
-<b>#Pokeapi</b>
+# Getting Started with shop-reactjs-nodejs
 
-React,redux,redux-thunk,redux-saga,live search, PokeAPI, Snapshot Testing
+> Project(shop) with use: React, Redux, Redux-thunk, TypeScript, REST API, JEST/RTL, Node.js
 
-<b>Steps:</b><br />
-install pokeapi_reactjs<br />
-cd pokeapi_reactjs<br />
-npm install <br />
-npm start <br />
+```
+# Run project(backend)
+cd vanila
+npm install or yarn install
+node server
 
+# Run project(frontend)
+cd frontend
+npm install or yarn install
+npm start
+```
